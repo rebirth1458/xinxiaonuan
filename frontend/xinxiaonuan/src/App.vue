@@ -1,11 +1,14 @@
 <script setup>
-import MyHeader from './components/header.vue'
 </script>
 
 <template>
-  <MyHeader></MyHeader>
+  <router-view></router-view>
 </template>
 
-<style scoped>
+<style>
+html, body,#app {
+  height: 100%;
+  margin: 0; /* 确保没有默认的边距 */
+}
 
 </style>

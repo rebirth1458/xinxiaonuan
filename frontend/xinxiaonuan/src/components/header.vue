@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <h1>我是信小暖</h1>
+  <el-header>我是信小暖</el-header>
 </template>
 
 <style scoped>
