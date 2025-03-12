@@ -1,8 +1,19 @@
 <script setup>
-import MyHeader from '../components/header.vue'
-import Myfooter from '../components/footer.vue'
-import Main from '../components/main.vue'
-import siderbar from '../components/siderbar.vue'
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import MyHeader from '../layout/header.vue'
+import Myfooter from '../layout/footer.vue'
+import Main from '../layout/main.vue'
+import siderbar from '../layout/siderbar.vue'
+const route = useRoute();
+let isHomeRoute = ref(route.path === '/xiaonuan');
+// 监听路由变化，更新 isHomeRoute
+watch(
+  () => route.path,
+  (newPath) => {
+    isHomeRoute.value = newPath === '/xiaonuan';
+  }
+);
 </script>
 
 <template>
@@ -16,7 +27,11 @@ import siderbar from '../components/siderbar.vue'
         </el-aside>
         <el-container>
             <el-main>
-                <Main></Main>
+                <Main v-if="!isHomeRoute"></Main>
+                <div v-else>
+                    <h1>欢迎来到主页</h1>
+                    <p>这里是你的主页信息。</p>
+                </div>
             </el-main>
             <el-footer>
                 <Myfooter></Myfooter>
