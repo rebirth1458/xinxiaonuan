@@ -1,8 +1,9 @@
 <script setup>
+import MyHeader from './components/header.vue'
 </script>
 
 <template>
-  <h1>信小暖demo</h1>
+  <MyHeader></MyHeader>
 </template>
 
 <style scoped>
