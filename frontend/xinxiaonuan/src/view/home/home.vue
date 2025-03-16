@@ -1,10 +1,11 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import MyHeader from '../layout/header.vue'
-import Myfooter from '../layout/footer.vue'
-import Main from '../layout/main.vue'
-import siderbar from '../layout/siderbar.vue'
+import MyHeader from '../../layout/header.vue'
+import Myfooter from '../../layout/footer.vue'
+import Main from '../../layout/main.vue'
+import siderbar from '../../layout/siderbar.vue'
+import home_view from './home_view.vue';
 const route = useRoute();
 let isHomeRoute = ref(route.path === '/xiaonuan');
 // 监听路由变化，更新 isHomeRoute
@@ -18,9 +19,6 @@ watch(
 
 <template>
     <el-container>
-      <el-header>
-        <MyHeader></MyHeader>
-      </el-header>
       <el-container>
         <el-aside width="200px">
             <siderbar></siderbar>
@@ -29,8 +27,7 @@ watch(
             <el-main>
                 <Main v-if="!isHomeRoute"></Main>
                 <div v-else>
-                    <h1>欢迎来到主页</h1>
-                    <p>这里是你的主页信息。</p>
+                    <home_view></home_view>
                 </div>
             </el-main>
             <el-footer>
@@ -50,5 +47,8 @@ watch(
 }
 .common-layout{
     height: 100%;
+}
+.el-footer{
+    height: 30px;
 }
 </style>

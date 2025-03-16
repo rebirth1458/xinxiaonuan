@@ -28,7 +28,6 @@ export default {
         // { name: 'grid', link: 'grid.html', icon: 'fas fa-th', label: 'Grid' },
         // { name: 'login', link: 'login.html', icon: 'fas fa-sign-in-alt', label: 'Login' },
         // { name: 'file', link: 'file.html', icon: 'fas fa-file', label: 'File' },
-        // { name: 'comments', link: 'comments.html', icon: 'fas fa-comment', label: 'Comments' }
       ]
     };
   }
@@ -43,7 +42,7 @@ body {
 
 .sidebar {
   width: 40px;
-  height: calc(100vh - 150px);
+  height: 600px;
   background-color: #f8f9fa;
   position: fixed;
   top: 150px;
@@ -74,7 +73,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 8%;
+  height: 15%;
   position: relative;
 }
 
